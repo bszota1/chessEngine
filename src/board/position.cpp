@@ -93,3 +93,15 @@ void Position::putPiece(Color side, PieceType type, Square sq) {
     Bitboards::setBit(occupancy[side], sq);
     zobristKey ^= Zobrist::pieceKeys[side][type][sq];
 }
+
+BitBoard Position::getAttacksTo(Square sq, Color side) {
+    BitBoard attacks = 0ULL;
+    Color opp = (side == WHITE) ? BLACK : WHITE;
+
+    attacks |= (PawnAttacks[side][sq] & pieces[opp][PAWN]);
+    attacks |= (KnightAttacks[sq] & pieces[opp][KNIGHT]);
+    attacks |= (KingAttacks[sq] & pieces[opp][KING]);
+
+    return attacks;
+}
+
