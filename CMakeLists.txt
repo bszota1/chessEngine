@@ -8,5 +8,8 @@ add_executable(chessEngine main.cpp
         src/board/position.hpp
         src/core/bitboard.cpp
         src/core/bitboard.hpp
+        src/core/zobrist.hpp
+        src/core/zobrist.cpp
+        src/board/position.cpp
 
 )

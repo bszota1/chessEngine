@@ -13,7 +13,8 @@ enum Square {
     A5, B5, C5, D5, E5, F5, G5, H5,
     A6, B6, C6, D6, E6, F6, G6, H6,
     A7, B7, C7, D7, E7, F7, G7, H7,
-    A8, B8, C8, D8, E8, F8, G8, H8
+    A8, B8, C8, D8, E8, F8, G8, H8,
+    SQ_NONE
 };
 
 enum Color {BLACK , WHITE};
@@ -28,8 +29,6 @@ constexpr int NORTH_EAST = 9;
 constexpr int NORTH_WEST = 7;
 constexpr int SOUTH_EAST = -7;
 constexpr int SOUTH_WEST = -9;
-
-constexpr int SQ_NONE = 64;
 
 enum Castle {WHITE_SHORT = 1, WHITE_LONG = 2, BLACK_SHORT = 4, BLACK_LONG = 8};
 

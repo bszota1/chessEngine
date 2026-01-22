@@ -11,6 +11,16 @@ struct StateInfo {
     int halfMoveClock;
     uint64_t zobristKey;
     StateInfo* previous;
+
+    ~StateInfo() {
+        lastMove = 0ULL;
+        castlingRights = 0;
+        epSquare = SQ_NONE;
+        halfMoveClock = 0;
+        zobristKey = 0ULL;
+        previous = nullptr;
+    }
+
 };
 
 
@@ -29,6 +39,7 @@ private:
     StateInfo* st;
 public:
     void makeMove(Move m);
-    void parseFen(std::string fen);
+    void parseFen(const std::string& fen);
     BitBoard getAttacksTo(Square sq, Color side);
+    void putPiece(Color side, PieceType type, Square sq);
 };
